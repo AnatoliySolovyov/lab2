@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Горизонтальний трьохрівневий випадаючий список */
+ul.horizontal {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.horizontal li {
+    display: inline-block;
+    position: relative;
+}
+
+ul.horizontal li a {
+    display: block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+}
+
+ul.horizontal li a:hover {
+    background-color: #555;
+}
+
+ul.horizontal li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
+}
+
+ul.horizontal li:hover > ul {
+    display: block;
+}
+
+ul.horizontal li ul li {
+    display: block;
+    width: 180px;
+    position: relative;
+}
+
+ul.horizontal li ul li ul {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+
+ul.horizontal li ul li:hover > ul {
+    display: block;
+}
+
+/* Вертикальний дворівневий випадаючий список */
+ul.vertical {
+    list-style-type: none;
+}
+
+ul.vertical li {
+    position: relative;
+    width: 200px;
+}
+
+ul.vertical li a {
+    display: block;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+}
+
+ul.vertical li a:hover {
+    background-color: #555;
+}
+
+ul.vertical li ul {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    padding: 0;
+}
+
+ul.vertical li:hover ul {
+    display: block;
+}
+
+/* Анімація для трьох властивостей */
+.animated-box {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    position: relative;
+    animation: move-box 4s infinite;
+    margin-top: 20px;
+}
+
+@keyframes move-box {
+    0% {
+        top: 0;
+        left: 0;
+        background-color: #e74c3c;
+    }
+    50% {
+        top: 100px;
+        left: 100px;
+        background-color: #2ecc71;
+    }
+    75% {
+        top: 0;
+        left: 200px;
+        background-color: #f1c40f;
+    }
+    100% {
+        top: 0;
+        left: 0;
+        background-color: #3498db;
+    }
+}
+
+/* Реклама */
+.ad-banner {
+    width: 300px;
+    height: 150px;
+    background-color: #f39c12;
+    color: white;
+    display: flex;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadeInOut 10s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 40% {
+        opacity: 0;
+    }
+    30%, 70% {
+        opacity: 1;
+    }
+    60%, 100% {
+        opacity: 0;
+    }
+}
